@@ -1,25 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import activeBtn from "./Components/activeBtn/activeBtn";
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+    <div className="btn-container">
+      <button
+        className={`btn ${activeBtn === "like" ? "like-active" : ""}`}
+        onClick={handleLikeClick}>
+        <span className="material-symbols-rounded">thumb_up</span>
+        Like {likeCount}
+      </button>
+   
+      <button
+        className={`btn ${activeBtn === "dislike" ? "dislike-active" : ""}`}
+        onClick={handleDisikeClick}
+      >
+        <span className="material-symbols-rounded">thumb_down</span>
+        Dislike {dislikeCount}
+      </button>
     </div>
-  );
+  </div>);
+  
 }
 
-export default App;
+export default App; 
+
